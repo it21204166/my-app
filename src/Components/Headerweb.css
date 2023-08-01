@@ -35,12 +35,24 @@ body{
     left: 0;
     width: 100%;
     padding: 2em 7%;
-    background-color: yellowgreen;
+    background-color: transparent;
     display: flex;
     align-items: center;
     z-index: 100;
+    transition: .5s;
 
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    /* Add styles to modify the header when it becomes sticky */
+    /* For example, you can change the background color to white */
+    background-color: #ffffff;
+  }
 
 .logo{
    font-size: 2.5rem;
@@ -58,6 +70,14 @@ body{
     margin-right: 3.5rem;
 }
 
+.sticky .navbar a{
+    color: var(--text-color);
+}
+
+.sticky .navbar a.active{
+    color: var(--main-color);
+}
+
 .navbar a.active::before{
     content: '';
     position: absolute;
@@ -68,8 +88,18 @@ body{
     background: var(--white-color);
 }
 
+.sticky .navbar a::before{
+    background: var(--main-color);
+    opacity: .7;
+}
+
 #darkMood-icon{
-    font-size: 2.4rem;
+    font-size: 1.7rem;
     color: var(--white-color);
     cursor: pointer;
+}
+
+.sticky #darkMood-icon{
+    color: var(--text-color) ;
+    opacity: .9;
 }
