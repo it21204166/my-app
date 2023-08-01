@@ -38,6 +38,7 @@ section{
 .home{
     display: flex;
     align-items: center;
+    margin-left: 50px;
 }
 
 .home .home-content{
@@ -160,6 +161,7 @@ section{
 
 .home .profession .i{
     font-size: 3.0rem;
+    color: var(--main-color);
 }
 
 .home .profession h3{
@@ -192,6 +194,7 @@ section{
     position: absolute;
     bottom: 0;
     right: 0;
+    top: 4%;
     width: 35%;
     pointer-events: none;
 }
