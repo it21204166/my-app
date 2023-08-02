@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import './Headerweb.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faMoon, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 export default function Headerweb() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('home'); // Set default active link
 
   const handleNavLinkClick = (id) => {
     setActiveLink(id);
+    setIsMenuOpen(false); // Close the menu after clicking a navigation link
+  };
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen((prev) => !prev);
   };
 
   useEffect(() => {
@@ -42,7 +48,8 @@ export default function Headerweb() {
       <header className="header">
         <a href='#a' className='logo'>Portfolio</a>
 
-        <nav className='navbar'>
+        {/* Add 'open' class to navbar when isMenuOpen is true */}
+        <nav className={`navbar ${isMenuOpen ? 'open' : ''}`}>
           <a href='#home' className={activeLink === 'home' ? 'active' : ''} onClick={() => handleNavLinkClick('home')}>
             Home
           </a>
@@ -62,6 +69,10 @@ export default function Headerweb() {
 
         <div className='bx bx-moon' id='darkMood-icon'>
           <FontAwesomeIcon icon={faMoon} />
+        </div>
+
+        <div className={`bx ${isMenuOpen ? 'bx-times' : 'bx-menu'}`} id='menu-icon' onClick={handleMenuToggle}>
+          <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
         </div>
       </header>
     </div>

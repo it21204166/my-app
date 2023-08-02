@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF,faWhatsapp ,faLinkedinIn,faGithub} from '@fortawesome/free-brands-svg-icons';
 import { faCode,faPalette,faLaptopCode,faDatabase } from '@fortawesome/free-solid-svg-icons';
 import './Home.css';
+import './Headerweb.css'
 import ProfileImage from '../Components/Image/My photo1.png'
 
 
